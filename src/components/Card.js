@@ -15,6 +15,9 @@ export default function Card({
   const [answered, setAnswered] = useState(false);
   const [showButton, setShowButton] = useState(false);
   const [icon, setIcon] = useState(0);
+  const firstIcon = 1;
+  const secondIcon = 2;
+  const thirdIcon = 3;
 
   function openCard(card) {
     setVirado([card]);
@@ -37,7 +40,7 @@ export default function Card({
   const turnedCard = virado.includes(index);
 
   return !turnedCard ? (
-    <ContainerCard data-test="flashcard" showButton={showButton} icon={icon}>
+    <ContainerCard data-test="flashcard" showButton={showButton} icon={icon} firstIcon={firstIcon} secondIcon={secondIcon} thirdIcon={thirdIcon}>
       <p data-test="flashcard-text">{`Pergunta ${index + 1}`}</p>
       <div>
         <img
@@ -58,7 +61,7 @@ export default function Card({
           <img
             data-test="turn-btn"
             src={setaVirar}
-            onClick={() => turnCard(index)}
+            onClick={() => turnCard()}
             alt="icone"
           />
         ) : (
@@ -95,15 +98,13 @@ const ContainerCard = styled.div`
   p {
     font-size: 16px;
     font-family: "Recursive", sans-serif;
-    color: ${({ icon }) =>
-      icon === 0
-        ? "#333"
-        : icon === 1
-        ? "red"
-        : icon === 2
-        ? "orange"
-        : icon === 3 && "green"};
-    text-decoration: ${({ icon }) => (!icon ? "none" : "line-through")};
+    color: ${({ icon, firstIcon, secondIcon, thirdIcon }) =>
+        icon === firstIcon
+        ? "#FF3030"
+        : icon === secondIcon
+        ? "#FF922E"
+        : icon === thirdIcon ? "#2FBE34" : "#333"};
+    text-decoration: ${({ icon }) => !icon ? "none" : "line-through"};
     font-weight: 700;
   }
 `;
@@ -118,6 +119,7 @@ const OpenCard = styled(ContainerCard)`
     text-align: left;
     font-size: 18px;
     font-weight: 400;
+    color:#333;
   }
   div {
     gap: 5px;
@@ -125,8 +127,8 @@ const OpenCard = styled(ContainerCard)`
     display: flex;
     justify-content: ${({ showButton }) =>
       !showButton ? `center` : "space-between"};
-    flex-direction: ${({ showButton }) => (!showButton ? `column` : "row")};
-    align-items: ${({ showButton }) => (!showButton ? `flex-end` : "")};
+    flex-direction: ${({ showButton }) => !showButton ? `column` : "row"};
+    ${({ showButton }) => !showButton && `align-items: flex-end;`}
   }
 `;
 
