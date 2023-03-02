@@ -67,16 +67,16 @@ export default function Card({
         ) : (
           <>
             <DontRemember data-test="no-btn"
-            onClick={() => answerCard(1)}>
+            onClick={() => answerCard(firstIcon)}>
               Não lembrei
             </DontRemember>
             <AlmostRemember
               data-test="partial-btn"
-              onClick={() => answerCard(2)}
+              onClick={() => answerCard(secondIcon)}
             >
               Quase não lembrei
             </AlmostRemember>
-            <Zap data-test="zap-btn" onClick={() => answerCard(3)}>
+            <Zap data-test="zap-btn" onClick={() => answerCard(thirdIcon)}>
               Zap!
             </Zap>
           </>
