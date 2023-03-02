@@ -4,7 +4,7 @@ import logo from "../assets/logo.png";
 export default function Header(){
     return (
         <ContainerHeader>
-            <img src={logo}/>  
+            <img src={logo} alt={logo}/>  
             <p>ZapRecall</p>
         </ContainerHeader>
     );
