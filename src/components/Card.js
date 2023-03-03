@@ -9,8 +9,9 @@ export default function Card({
   question,
   answer,
   setContador,
+  setIconArray,
+  iconArray
 }) {
-  const [correct, setCorrect] = useState([]);
   const [virado, setVirado] = useState([]);
   const [answered, setAnswered] = useState(false);
   const [showButton, setShowButton] = useState(false);
@@ -29,8 +30,8 @@ export default function Card({
   }
 
   function answerCard(res) {
-    setCorrect([...correct, res]);
-    console.log(res);
+    const newCard = [...iconArray, res];
+    setIconArray(newCard);
     setIcon(res);
     const newCount = contador + 1;
     setContador(newCount);
@@ -140,6 +141,7 @@ const Button = styled.button`
   font-size: 12px;
   color: #fff;
   overflow: hidden;
+  font-family: "Recursive", sans-serif;
 `;
 
 const DontRemember = styled(Button)`

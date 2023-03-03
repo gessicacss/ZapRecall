@@ -6,12 +6,14 @@ import Header from "./components/Header";
 
 export default function App() {
   const [contador, setContador] = useState(0);
+  const [iconArray, setIconArray] = useState([]);
+  
   return (
     <>
       <Header />
       <Container>
-        <FlashCards setContador={setContador} contador={contador} />
-        <Footer contador={contador} />
+        <FlashCards setContador={setContador} contador={contador} setIconArray={setIconArray} iconArray={iconArray}/>
+        <Footer contador={contador} iconArray={iconArray}/>
       </Container>
     </>
   );
