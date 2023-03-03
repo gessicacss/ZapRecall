@@ -3,6 +3,7 @@ import styled from "styled-components";
 import FlashCards from "./components/FlashCards";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import StartPage from "./components/StartPage";
 
 export default function App() {
   const [contador, setContador] = useState(0);
@@ -10,6 +11,7 @@ export default function App() {
 
   return (
     <>
+      <StartPage />
       <Header />
       <Container>
         <FlashCards setContador={setContador} contador={contador} setIconArray={setIconArray} iconArray={iconArray}/>

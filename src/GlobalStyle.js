@@ -53,6 +53,12 @@ table {
 *{
     box-sizing: border-box;
 }
+h1, h2 {
+	font-size: 36px;
+    font-weight: 400;
+    color: white;
+    font-family: "Righteous", cursive;
+}
 `;
 
 export default GlobalStyle;

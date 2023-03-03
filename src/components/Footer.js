@@ -12,7 +12,7 @@ export default function Footer({ contador, iconArray }) {
   return (
     <ContainerFooter data-test="footer" allAnswered={allAnswered}>
       {!allAnswered ? '' : haveMistakes ? 
-      <ContainerMessage data-test="finish-test">
+      <ContainerMessage data-test="finish-text">
         <div>
           <img src={sad} alt='emoji triste' />
           <strong>Putz...</strong>
@@ -20,7 +20,7 @@ export default function Footer({ contador, iconArray }) {
         <p>Ainda faltam alguns...</p>
         <p>Mas não desanime!</p>
       </ContainerMessage> : 
-      <ContainerMessage data-test="finish-test">
+      <ContainerMessage data-test="finish-text">
         <div>
           <img src={party} alt='emoji festa' />
         <strong>Parabéns!</strong>

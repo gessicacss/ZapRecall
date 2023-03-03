@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <ContainerHeader>
       <img src={logo} alt={logo} />
-      <p>ZapRecall</p>
+      <h2>ZapRecall</h2>
     </ContainerHeader>
   );
 }
@@ -19,11 +19,5 @@ const ContainerHeader = styled.div`
   height: 60px;
   img {
     width: 52px;
-  }
-  p {
-    font-size: 36px;
-    font-weight: 400;
-    color: white;
-    font-family: "Righteous", cursive;
   }
 `;
