@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import icons from './icon.js';
-import setaVirar from "../assets/seta_virar.png";
+import icons from '../icon.js';
+import setaVirar from "./assets/seta_virar.png";
 import { useState } from "react";
 
 export default function Card({

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import FlashCards from "./components/FlashCards";
+import FlashCards from "./components/flashcards/FlashCards";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import StartPage from "./components/StartPage";
