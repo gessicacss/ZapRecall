@@ -7,7 +7,7 @@ import Header from "./components/Header";
 export default function App() {
   const [contador, setContador] = useState(0);
   const [iconArray, setIconArray] = useState([]);
-  
+
   return (
     <>
       <Header />
@@ -26,5 +26,5 @@ const Container = styled.div`
   width: 100%;
   gap: 30px;
   flex-direction: column;
-  margin: 30px 0 150px 0;
+  margin: 30px 0 210px 0;
 `;
