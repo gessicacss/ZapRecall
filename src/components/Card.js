@@ -90,10 +90,10 @@ export default function Card({
 const ContainerCard = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px;
   background-color: #fff;
   width: calc(50% + 100px);
-  height: 65px;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   p {
@@ -115,7 +115,8 @@ const OpenCard = styled(ContainerCard)`
   align-items: center;
   background-color: #ffffd4;
   align-items: flex-start;
-  height: 131px;
+  min-height: 131px;
+  gap:15px;
   p {
     text-align: left;
     font-size: 18px;
@@ -123,7 +124,7 @@ const OpenCard = styled(ContainerCard)`
     color:#333;
   }
   div {
-    gap: 5px;
+    gap: 10px;
     width: 100%;
     display: flex;
     justify-content: ${({ showButton }) =>
@@ -134,7 +135,7 @@ const OpenCard = styled(ContainerCard)`
 `;
 
 const Button = styled.button`
-  width: 85px;
+  width: 100%;
   height: 37px;
   border-radius: 5px;
   border: none;
