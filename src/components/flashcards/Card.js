@@ -11,10 +11,10 @@ import {
 
 export default function Card({
   index,
-  contador,
+  counter,
   question,
   answer,
-  setContador,
+  setCounter,
   setIconArray,
   iconArray,
 }) {
@@ -29,8 +29,8 @@ export default function Card({
     const newCard = [...iconArray, res];
     setIconArray(newCard);
     setAnswerIcon(res);
-    const newCount = contador + 1;
-    setContador(newCount);
+    const newCount = counter + 1;
+    setCounter(newCount);
     setAnswered(!answered);
   }
 

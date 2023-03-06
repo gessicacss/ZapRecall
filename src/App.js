@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import StartPage from "./components/StartPage";
 
 export default function App() {
-  const [contador, setContador] = useState(0);
+  const [counter, setCounter] = useState(0);
   const [iconArray, setIconArray] = useState([]);
 
   return (
@@ -14,9 +14,9 @@ export default function App() {
       <StartPage />
       <Header />
       <Container>
-        <FlashCards setContador={setContador} contador={contador} setIconArray={setIconArray} iconArray={iconArray}/>
+        <FlashCards setCounter={setCounter} counter={counter} setIconArray={setIconArray} iconArray={iconArray}/>
       </Container>
-      <Footer contador={contador} iconArray={iconArray}/>
+      <Footer counter={counter} iconArray={iconArray}/>
     </>
   );
 }

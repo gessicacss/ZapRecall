@@ -3,9 +3,9 @@ import icons from "./icon";
 import sad from "../assets/sad.png";
 import party from "../assets/party.png";
 
-export default function Footer({ contador, iconArray }) {
+export default function Footer({ counter, iconArray }) {
   const allCardsCount = 8;
-  const allAnswered = contador === allCardsCount;
+  const allAnswered = counter === allCardsCount;
   const haveMistakes = iconArray.includes(1);
 
   return (
@@ -30,7 +30,7 @@ export default function Footer({ contador, iconArray }) {
           <p>Você não esqueceu de nenhum flashcard!</p>
         </ContainerMessage>
       )}
-      {contador}/{allCardsCount} concluídos
+      {counter}/{allCardsCount} concluídos
       <div>
         {iconArray.map((i, index) => (
           <img
