@@ -18,39 +18,27 @@ export default function Card({
   setIconArray,
   iconArray,
 }) {
-  const [virado, setVirado] = useState([]);
   const [answered, setAnswered] = useState(false);
   const [showButton, setShowButton] = useState(false);
-  const [icon, setIcon] = useState(0);
+  const [answerIcon, setAnswerIcon] = useState(0);
   const firstIcon = 1;
   const secondIcon = 2;
   const thirdIcon = 3;
 
-  function openCard(card) {
-    setVirado([card]);
-    setAnswered(!answered);
-  }
-
-  function turnCard() {
-    setShowButton(true);
-  }
-
   function answerCard(res) {
     const newCard = [...iconArray, res];
     setIconArray(newCard);
-    setIcon(res);
+    setAnswerIcon(res);
     const newCount = contador + 1;
     setContador(newCount);
-    setVirado([]);
+    setAnswered(!answered);
   }
 
-  const turnedCard = virado.includes(index);
-
-  return !turnedCard ? (
+  return !answered ? (
     <ContainerCard
       data-test="flashcard"
       showButton={showButton}
-      icon={icon}
+      answerIcon={answerIcon}
       firstIcon={firstIcon}
       secondIcon={secondIcon}
       thirdIcon={thirdIcon}
@@ -58,10 +46,10 @@ export default function Card({
       <p data-test="flashcard-text">{`Pergunta ${index + 1}`}</p>
       <div>
         <img
-          data-test={icons[icon].data}
-          src={icons[icon].src}
-          onClick={() => !answered && openCard(index)}
-          alt={icons[icon].alt}
+          data-test={icons[answerIcon].data}
+          src={icons[answerIcon].src}
+          onClick={() => !answered && setAnswered(!answered)}
+          alt={icons[answerIcon].alt}
         />
       </div>
     </ContainerCard>
@@ -75,7 +63,7 @@ export default function Card({
           <img
             data-test="turn-btn"
             src={setaVirar}
-            onClick={() => turnCard()}
+            onClick={() => setShowButton(true)}
             alt="icone"
           />
         ) : (

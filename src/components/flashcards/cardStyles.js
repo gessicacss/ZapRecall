@@ -12,22 +12,21 @@ export const ContainerCard = styled.div`
   p {
     font-size: 16px;
     font-family: "Recursive", sans-serif;
-    color: ${({ icon, firstIcon, secondIcon, thirdIcon }) =>
-      icon === firstIcon
+    color: ${({ answerIcon, firstIcon, secondIcon, thirdIcon }) =>
+      answerIcon === firstIcon
         ? "#FF3030"
-        : icon === secondIcon
+        : answerIcon === secondIcon
         ? "#FF922E"
-        : icon === thirdIcon
+        : answerIcon === thirdIcon
         ? "#2FBE34"
         : "#333"};
-    text-decoration: ${({ icon }) => (!icon ? "none" : "line-through")};
+    text-decoration: ${({ answerIcon }) => (!answerIcon ? "none" : "line-through")};
     font-weight: 700;
   }
 `;
 
 export const OpenCard = styled(ContainerCard)`
   flex-direction: column;
-  align-items: center;
   background-color: #ffffd4;
   align-items: flex-start;
   min-height: 131px;

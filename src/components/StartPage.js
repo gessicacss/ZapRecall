@@ -47,6 +47,7 @@ const StartButtom = styled.button`
   background-color: #fff;
   border: 1px solid #d70900;
   border-radius: 5px;
+  font-family: "Recursive", sans-serif;
   color: #d70900;
   font-size: 18px;
   cursor: pointer;

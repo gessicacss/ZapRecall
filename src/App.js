@@ -15,8 +15,8 @@ export default function App() {
       <Header />
       <Container>
         <FlashCards setContador={setContador} contador={contador} setIconArray={setIconArray} iconArray={iconArray}/>
-        <Footer contador={contador} iconArray={iconArray}/>
       </Container>
+      <Footer contador={contador} iconArray={iconArray}/>
     </>
   );
 }
